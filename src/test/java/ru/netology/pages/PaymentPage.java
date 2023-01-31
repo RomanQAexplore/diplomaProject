@@ -39,7 +39,7 @@ public class PaymentPage {
     }
 
     public void waitIfSuccessMessage() {
-        successNotification.should(visible, Duration.ofMillis(20000));
+        successNotification.should(visible, Duration.ofMillis(10000));
     }
 
     public void waitIfFailMessage() {
@@ -47,7 +47,7 @@ public class PaymentPage {
     }
 
     public void waitIfWrongFormatMessage() {
-        wrongFormatMessage.should(visible, Duration.ofMillis(20000));
+        wrongFormatMessage.should(visible, Duration.ofMillis(10000));
     }
 
     public void waitIfWrongTermMessage() {

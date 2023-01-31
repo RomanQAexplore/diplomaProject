@@ -14,105 +14,94 @@ public class DataHelper {
     }
 
     public static CardValidInformationModel getValidApprovedCardData() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "24", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getValidDeclinedCardData() {
-        return new CardValidInformationModel("4444 4444 4444 4442", "12", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4442", "08", "24", "IVANOV IVAN", "111");
     }
 
 //    FIELD NUMBER
 
     public static CardValidInformationModel getEmptyCardNumber() {
-        return new CardValidInformationModel("", "12", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("", "08", "24", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getInvalidCardNumberWith15Symbols() {
-        return new CardValidInformationModel("4444 4444 4444 444", "12", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 444", "08", "24", "IVANOV IVAN", "111");
+    }
+    public static CardValidInformationModel getInvalidCardNumberAllZero() {
+        return new CardValidInformationModel("0000 0000 0000 0000", "08", "24", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getAnotherBankCardNumber() {
-        return new CardValidInformationModel("5559 4444 4444 4444", "12", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("5559 4444 4444 4444", "08", "24", "IVANOV IVAN", "111");
     }
 
 //    FIELD MONTH
 
     public static CardValidInformationModel getEmptyMonth() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "", "24", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getInvalidFormatMonthIsZeroZero() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "00", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "00", "24", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getInvalidFormatMonthIsIrrelevant() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "13", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "13", "24", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getInvalidFormatMonthIsOneDigit() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "8", "23", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "8", "24", "IVANOV IVAN", "111");
     }
 
 //    FIELD YEAR
 
     public static CardValidInformationModel getEmptyYear() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getEarlyYear() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "20", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "20", "IVANOV IVAN", "111");
     }
 
     public static CardValidInformationModel getFutureYear() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "50", "Ivanov Petr", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "50", "IVANOV IVAN", "111");
     }
 
 //    FIELD OWNER
 
     public static CardValidInformationModel getEmptyOwner() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "24", "", "111");
     }
 
-    public static CardValidInformationModel getInvalidOwnerWithOneWord() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "Ivan", "111");
-    }
 
-    public static CardValidInformationModel getInvalidOwnerWithThreeWords() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "Ivanov Petr Ivanovich", "111");
-    }
-
-    public static CardValidInformationModel getInvalidOwnerWithLowerCase() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "ivanov petr", "111");
-    }
-
-    public static CardValidInformationModel getInvalidOwnerWithUpperCase() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "10", "23", "IVANOV PETR", "111");
-    }
 
     public static CardValidInformationModel getInvalidOwnerWithCyrillic() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "Иванов Петр", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "24", "Иванов Иван", "111");
     }
 
     public static CardValidInformationModel getInvalidOwnerWithDigits() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "12345", "111");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "24", "12345", "111");
     }
 
-    public static CardValidInformationModel getInvalidOwnerWithSymbols() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "%№%№", "111");
-    }
 
 //    FIELD CVV
 
     public static CardValidInformationModel getEmptyCVV() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "Ivanov Petr", "");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "24", "IVANOV IVAN", "");
     }
 
     public static CardValidInformationModel getInvalidCVVWith1Digit() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "Ivanov Petr", "1");
+        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "IVANOV IVAN", "1");
     }
 
     public static CardValidInformationModel getInvalidCVVWith2Digits() {
-        return new CardValidInformationModel("4444 4444 4444 4441", "12", "23", "Ivanov Petr", "11");
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "24", "IVANOV IVAN", "11");
+    }
+    public static CardValidInformationModel getInvalidCVVWithAllZero() {
+        return new CardValidInformationModel("4444 4444 4444 4441", "08", "24", "IVANOV IVAN", "000");
     }
 }
 

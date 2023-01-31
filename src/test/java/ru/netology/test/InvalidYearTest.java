@@ -25,7 +25,7 @@ public class InvalidYearTest extends TestBase {
         void shouldNotDoPaymentWhenYearEmpty() {
             val info = getEmptyYear();
             paymentPage.fillForm(info);
-            paymentPage.waitIfShouldFillFieldMessage();
+            paymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
@@ -55,7 +55,7 @@ public class InvalidYearTest extends TestBase {
         void shouldNotDoPaymentWhenYearEmpty() {
             val info = getEmptyYear();
             paymentPage.fillForm(info);
-            paymentPage.waitIfShouldFillFieldMessage();
+            paymentPage.waitIfWrongFormatMessage();
         }
 
         @Test

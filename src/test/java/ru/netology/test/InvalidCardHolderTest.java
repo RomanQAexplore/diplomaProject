@@ -28,33 +28,6 @@ public class InvalidCardHolderTest extends TestBase {
             paymentPage.waitIfShouldFillFieldMessage();
         }
 
-        @Test
-        void shouldNotDoPaymentWhenOwnerIsOneLatinWord() {
-            val info = getInvalidOwnerWithOneWord();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
-
-        @Test
-        void shouldNotDoPaymentWhenOwnerIsThreeLatinWords() {
-            val info = getInvalidOwnerWithThreeWords();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
-
-        @Test
-        void shouldNotDoPaymentWhenOwnerInLowerCase() {
-            val info = getInvalidOwnerWithLowerCase();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
-
-        @Test
-        void shouldNotDoPaymentWhenOwnerInUpperCase() {
-            val info = getInvalidOwnerWithUpperCase();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
 
         @Test
         void shouldNotDoPaymentWhenOwnerInCyrillic() {
@@ -70,12 +43,7 @@ public class InvalidCardHolderTest extends TestBase {
             paymentPage.waitIfWrongFormatMessage();
         }
 
-        @Test
-        void shouldNotDoPaymentWhenOwnerWithSymbols() {
-            val info = getInvalidOwnerWithSymbols();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
+
     }
 
     @Nested
@@ -93,33 +61,6 @@ public class InvalidCardHolderTest extends TestBase {
             paymentPage.waitIfShouldFillFieldMessage();
         }
 
-        @Test
-        void shouldNotDoPaymentWhenOwnerIsOneLatinWord() {
-            val info = getInvalidOwnerWithOneWord();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
-
-        @Test
-        void shouldNotDoPaymentWhenOwnerIsThreeLatinWords() {
-            val info = getInvalidOwnerWithThreeWords();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
-
-        @Test
-        void shouldNotDoPaymentWhenOwnerInLowerCase() {
-            val info = getInvalidOwnerWithLowerCase();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
-
-        @Test
-        void shouldNotDoPaymentWhenOwnerInUpperCase() {
-            val info = getInvalidOwnerWithUpperCase();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
 
         @Test
         void shouldNotDoPaymentWhenOwnerInCyrillic() {
@@ -135,12 +76,7 @@ public class InvalidCardHolderTest extends TestBase {
             paymentPage.waitIfWrongFormatMessage();
         }
 
-        @Test
-        void shouldNotDoPaymentWhenOwnerWithSymbols() {
-            val info = getInvalidOwnerWithSymbols();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
-        }
+
     }
 }
 

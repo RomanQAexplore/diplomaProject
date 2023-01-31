@@ -41,6 +41,12 @@ public class InvalidCVCCVVTest extends TestBase {
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();
         }
+        @Test
+        void shouldNotDoPaymentWhenСVVIsAllZero() {
+            val info = getInvalidCVVWithAllZero();
+            paymentPage.fillForm(info);
+            paymentPage.waitIfWrongFormatMessage();
+        }
     }
 
     @Nested
@@ -68,6 +74,12 @@ public class InvalidCVCCVVTest extends TestBase {
         @Test
         void shouldNotDoPaymentWhenСVVIs2Digits() {
             val info = getInvalidCVVWith2Digits();
+            paymentPage.fillForm(info);
+            paymentPage.waitIfWrongFormatMessage();
+        }
+        @Test
+        void shouldNotDoPaymentWhenСVVIsAllZero() {
+            val info = getInvalidCVVWithAllZero();
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();
         }

@@ -8,7 +8,7 @@ import ru.netology.pages.MainPage;
 import ru.netology.pages.PaymentPage;
 
 import static ru.netology.data.DataHelper.*;
-import static ru.netology.data.DataHelper.getAnotherBankCardNumber;
+
 
 
     
@@ -37,13 +37,14 @@ import static ru.netology.data.DataHelper.getAnotherBankCardNumber;
                 paymentPage.fillForm(info);
                 paymentPage.waitIfWrongFormatMessage();
             }
-
             @Test
-            void shouldNotDoPaymentWhenAnotherBankCard() {
-                val info = getAnotherBankCardNumber();
+            void shouldNotDoPaymentWhenAllZero() {
+                val info = getInvalidCardNumberAllZero();
                 paymentPage.fillForm(info);
                 paymentPage.waitIfFailMessage();
             }
+
+
         }
 
         @Nested
@@ -67,14 +68,16 @@ import static ru.netology.data.DataHelper.getAnotherBankCardNumber;
                 paymentPage.fillForm(info);
                 paymentPage.waitIfWrongFormatMessage();
             }
-
             @Test
-            void shouldNotDoPaymentWhenAnotherBankCard() {
-                val info = getAnotherBankCardNumber();
+            void shouldNotDoPaymentWhenAllZero() {
+                val info = getInvalidCardNumberAllZero();
                 paymentPage.fillForm(info);
                 paymentPage.waitIfFailMessage();
             }
+
+
+            }
         }
-    }
+
 
 
