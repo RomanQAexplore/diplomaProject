@@ -13,9 +13,9 @@
 
 ## Документация
 
-- [План автоматизации тестирования](https://github.com/RomanQAexplore/diplomaProject/blob/master/plandiplom.md)
-- [Отчет по итогам тестирования]()
-- [Комплексный отчет по итогам всего процесса автоматизации]()
+- [План автоматизации тестирования](https://github.com/RomanQAexplore/diplomaProject/blob/master/documents/plandiplom.md)
+- [Отчет по итогам тестирования](https://github.com/RomanQAexplore/diplomaProject/blob/master/documents/Report.md)
+- [Комплексный отчет по итогам всего процесса автоматизации](https://github.com/RomanQAexplore/diplomaProject/blob/master/documents/Summary.md)
 
 ## **Перед началом работы**
 1. Загрузите на свой ПК данный репозиторий. Для этого либо в консоле GIT Bash воспользуйтесь командой git clone https://github.com/RomanQAexplore/diplomaProject.git, либо в IntelliJ IDEA нажмите "Get from Version Control" и вставьте ссылку https://github.com/RomanQAexplore/diplomaProject.git в поле URL, нажмите "Clone".
