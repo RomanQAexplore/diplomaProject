@@ -20,7 +20,7 @@
 ## **Перед началом работы**
 1. Загрузите на свой ПК данный репозиторий. Для этого либо в консоле GIT Bash воспользуйтесь командой git clone https://github.com/RomanQAexplore/diplomaProject.git, либо в IntelliJ IDEA нажмите "Get from Version Control" и вставьте ссылку https://github.com/RomanQAexplore/diplomaProject.git в поле URL, нажмите "Clone".
 
-2. Установите Docker Desktop. Ознакомьтесь с [этой](https://github.com/netology-code/aqa-homeworks/blob/aqa4/docker/installation.md) инструкцией.
+2. Установите Docker Desktop. Ознакомьтесь с [этой](https://github.com/docker/docs/blob/main/desktop/install/windows-install.md) инструкцией.
 
 ## **Запуск**
 1. **Запускаем docker-контейнер с СУБД MySQL и PostgreSQL, а также Node.js.**
