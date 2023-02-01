@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/kr5y8xgjvdarc49r/branch/master?svg=true)](https://ci.appveyor.com/project/RomanAZhukov/diplomaproject/branch/master)
+
 # Дипломный проект по курсу «Тестировщик ПО»
 ## О проекте
 
