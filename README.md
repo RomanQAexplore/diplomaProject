@@ -36,13 +36,13 @@ docker-compose up
 
 Для этого открываем новую вкладку в Терминале IDEA и вводим следующую команду:
 - для СУБД **MySQL**:
-
-```java -jar artifacts/aqa-shop.jar -Dspring./datasource/url=jdbc:mysql://localhost:3306/app
+```java
+java -jar artifacts/aqa-shop.jar -Dspring./datasource/url=jdbc:mysql://localhost:3306/app
 
 ```
 - для СУБД **PostgreSQL**:
-
-```java -jar artifacts/aqa-shop.jar -Dspring./datasource/url=jdbc:postgresql://localhost:5432/app
+```java
+java -jar artifacts/aqa-shop.jar -Dspring./datasource/url=jdbc:postgresql://localhost:5432/app
 ```
 Дожидаемся сообщения, которое будет означать готовность SUT к работе:
 ```java
