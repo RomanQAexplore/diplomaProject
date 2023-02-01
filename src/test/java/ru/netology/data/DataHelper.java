@@ -31,12 +31,9 @@ public class DataHelper {
         return new CardValidInformationModel("4444 4444 4444 444", "08", "24", "IVANOV IVAN", "111");
     }
     public static CardValidInformationModel getInvalidCardNumberAllZero() {
-        return new CardValidInformationModel("0000 0000 0000 0000", "08", "24", "IVANOV IVAN", "111");
+        return new CardValidInformationModel("0000 0000 0000 0000", "08", "24", "IVANOV IVAN", "000");
     }
 
-    public static CardValidInformationModel getAnotherBankCardNumber() {
-        return new CardValidInformationModel("5559 4444 4444 4444", "08", "24", "IVANOV IVAN", "111");
-    }
 
 //    FIELD MONTH
 

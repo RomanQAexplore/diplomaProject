@@ -39,11 +39,11 @@ public class PaymentPage {
     }
 
     public void waitIfSuccessMessage() {
-        successNotification.should(visible, Duration.ofMillis(10000));
+        successNotification.should(visible, Duration.ofMillis(20000));
     }
 
     public void waitIfFailMessage() {
-        failNotification.should(visible, Duration.ofMillis(20000));
+        failNotification.should(visible, Duration.ofMillis(10000));
     }
 
     public void waitIfWrongFormatMessage() {

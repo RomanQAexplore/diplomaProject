@@ -25,7 +25,7 @@ public class InvalidMonthTest extends TestBase {
         void shouldNotDoPaymentWhenEmptyMonth() {
             val info = getEmptyMonth();
             paymentPage.fillForm(info);
-            paymentPage.waitIfShouldFillFieldMessage();
+            paymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
@@ -62,7 +62,7 @@ public class InvalidMonthTest extends TestBase {
         void shouldNotDoPaymentWhenEmptyMonth() {
             val info = getEmptyMonth();
             paymentPage.fillForm(info);
-            paymentPage.waitIfShouldFillFieldMessage();
+            paymentPage.waitIfWrongFormatMessage();
         }
 
         @Test

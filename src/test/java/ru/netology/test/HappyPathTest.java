@@ -66,7 +66,7 @@ public class HappyPathTest extends TestBase {
         }
 
         @Test
-        void shouldDoPaymentWhenValidApprovedCard() {
+        void shouldDoPaymentWhenValidApprovedCreditCard() {
             val info = getValidApprovedCardData();
             paymentPage.fillForm(info);
             paymentPage.waitIfSuccessMessage();
@@ -81,7 +81,7 @@ public class HappyPathTest extends TestBase {
         }
 
         @Test
-        void shouldNotDoPaymentWhenValidDeclinedCard() {
+        void shouldNotDoPaymentWhenValidDeclinedCreditCard() {
             val info = getValidDeclinedCardData();
             paymentPage.fillForm(info);
             paymentPage.waitIfFailMessage();

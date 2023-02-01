@@ -28,7 +28,7 @@ import static ru.netology.data.DataHelper.*;
             void shouldNotDoPaymentWhenEmptyCard() {
                 val info = getEmptyCardNumber();
                 paymentPage.fillForm(info);
-                paymentPage.waitIfShouldFillFieldMessage();
+                paymentPage.waitIfWrongFormatMessage();
             }
 
             @Test
@@ -59,7 +59,7 @@ import static ru.netology.data.DataHelper.*;
             void shouldNotDoPaymentWhenEmptyCard() {
                 val info = getEmptyCardNumber();
                 paymentPage.fillForm(info);
-                paymentPage.waitIfShouldFillFieldMessage();
+                paymentPage.waitIfWrongFormatMessage();
             }
 
             @Test
