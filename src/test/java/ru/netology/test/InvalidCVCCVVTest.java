@@ -22,27 +22,28 @@ public class InvalidCVCCVVTest extends TestBase {
         }
 
         @Test
-        void shouldNotDoPaymentWhenСVVIsEmpty() {
+        void shouldNotDoPaymentWhenCVVIsEmpty() {
             val info = getEmptyCVV();
             paymentPage.fillForm(info);
             paymentPage.waitIfShouldFillFieldMessage();
         }
 
         @Test
-        void shouldNotDoPaymentWhenСVVIs1Digit() {
+        void shouldNotDoPaymentWhenCVVIs1Digit() {
             val info = getInvalidCVVWith1Digit();
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
-        void shouldNotDoPaymentWhenСVVIs2Digits() {
+        void shouldNotDoPaymentWhenCVVIs2Digits() {
             val info = getInvalidCVVWith2Digits();
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();
         }
+
         @Test
-        void shouldNotDoPaymentWhenСVVIsAllZero() {
+        void shouldNotDoPaymentWhenCVVIsAllZero() {
             val info = getInvalidCVVWithAllZero();
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();
@@ -58,27 +59,28 @@ public class InvalidCVCCVVTest extends TestBase {
         }
 
         @Test
-        void shouldNotDoPaymentWhenСVVIsEmpty() {
+        void shouldNotDoPaymentWhenCVVIsEmpty() {
             val info = getEmptyCVV();
             paymentPage.fillForm(info);
             paymentPage.waitIfShouldFillFieldMessage();
         }
 
         @Test
-        void shouldNotDoPaymentWhenСVVIs1Digit() {
+        void shouldNotDoPaymentWhenCVVIs1Digit() {
             val info = getInvalidCVVWith1Digit();
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
-        void shouldNotDoPaymentWhenСVVIs2Digits() {
+        void shouldNotDoPaymentWhenCVVIs2Digits() {
             val info = getInvalidCVVWith2Digits();
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();
         }
+
         @Test
-        void shouldNotDoPaymentWhenСVVIsAllZero() {
+        void shouldNotDoPaymentWhenCVVIsAllZero() {
             val info = getInvalidCVVWithAllZero();
             paymentPage.fillForm(info);
             paymentPage.waitIfWrongFormatMessage();

@@ -4,8 +4,10 @@ import lombok.val;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static ru.netology.data.DataHelper.*;
-import static ru.netology.data.RestApiHelper.*;
+import static ru.netology.data.DataHelper.getValidApprovedCardData;
+import static ru.netology.data.DataHelper.getValidDeclinedCardData;
+import static ru.netology.data.RestApiHelper.fillPaymentFormWithCreditCardData;
+import static ru.netology.data.RestApiHelper.fillPaymentFormWithDebitCardData;
 
 class ApiTest {
 
