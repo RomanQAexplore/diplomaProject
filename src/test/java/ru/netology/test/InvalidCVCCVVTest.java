@@ -4,86 +4,88 @@ import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import ru.netology.pages.MainPage;
-import ru.netology.pages.PaymentPage;
+import ru.netology.pages.CreditPaymentPage;
+import ru.netology.pages.DebitPaymentPage;
 
 import static ru.netology.data.DataHelper.*;
 
 public class InvalidCVCCVVTest extends TestBase {
-    MainPage mainPage = new MainPage();
-    PaymentPage paymentPage = new PaymentPage();
+
+
 
     @Nested
     class FieldCvvOfDebitCardTests {
+
 
         @BeforeEach
         void setUpAllDebitCardTests() {
             mainPage.payWithDebitCard();
         }
-
+        DebitPaymentPage DebitPaymentPage = new DebitPaymentPage();
         @Test
         void shouldNotDoPaymentWhenCVVIsEmpty() {
             val info = getEmptyCVV();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfShouldFillFieldMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfShouldFillFieldMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenCVVIs1Digit() {
             val info = getInvalidCVVWith1Digit();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenCVVIs2Digits() {
             val info = getInvalidCVVWith2Digits();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenCVVIsAllZero() {
             val info = getInvalidCVVWithAllZero();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfWrongFormatMessage();
         }
     }
 
     @Nested
     class FieldCvvOfCreditCardTests {
 
+
         @BeforeEach
         void setUpAllCreditCardTests() {
             mainPage.payWithCreditCard();
         }
-
+        CreditPaymentPage CreditPaymentPage = new CreditPaymentPage();
         @Test
         void shouldNotDoPaymentWhenCVVIsEmpty() {
             val info = getEmptyCVV();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfShouldFillFieldMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfShouldFillFieldMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenCVVIs1Digit() {
             val info = getInvalidCVVWith1Digit();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenCVVIs2Digits() {
             val info = getInvalidCVVWith2Digits();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenCVVIsAllZero() {
             val info = getInvalidCVVWithAllZero();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfWrongFormatMessage();
         }
     }
 }

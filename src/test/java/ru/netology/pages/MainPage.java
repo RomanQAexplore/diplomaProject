@@ -1,23 +1,26 @@
 package ru.netology.pages;
-
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$$;
 public class MainPage {
-    private static final SelenideElement buyWithDebitCardButton = $(byText("Купить"));
-    private static final SelenideElement buyWithCreditCardButton = $(byText("Купить в кредит"));
-    private static final SelenideElement headerForSelectedWay = $("#root > div > h3");
+    private final SelenideElement buyButton = $$("button").find(exactText("Купить"));
+    private final SelenideElement creditButton = $$("button").find(exactText("Купить в кредит"));
 
-    public void payWithDebitCard() {
-        buyWithDebitCardButton.click();
-        headerForSelectedWay.shouldHave(Condition.exactText("Оплата по карте"));
+    public MainPage() {
+        SelenideElement heading = $$("h2").find(text("Путешествие дня"));
+        heading.shouldBe(visible);
     }
 
-    public void payWithCreditCard() {
-        buyWithCreditCardButton.click();
-        headerForSelectedWay.shouldHave(Condition.exactText("Кредит по данным карты"));
+    public DebitPaymentPage payWithDebitCard() {
+        buyButton.click();
+       return new DebitPaymentPage();
+    }
+
+    public CreditPaymentPage payWithCreditCard() {
+        creditButton.click();
+        return new CreditPaymentPage();
     }
 }

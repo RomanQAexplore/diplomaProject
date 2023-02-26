@@ -52,6 +52,8 @@ java -jar artifacts/aqa-shop.jar -Dspring./datasource/url=jdbc:postgresql://loca
 
 ```
 
+Для изменения БД MySQL на PostgreSQL, в build.gradle замените url System.getProperty('url', 'jdbc:mysql://localhost:3306/app') на System.getProperty('url', 'jdbc:postgresql://localhost:5432/app')
+
 В браузере сервис будет доступен по адресу http://localhost:8080/.
 
 ---------
@@ -61,11 +63,11 @@ java -jar artifacts/aqa-shop.jar -Dspring./datasource/url=jdbc:postgresql://loca
 Для этого открываем еще одну вкладку в Терминале и вводим следующую команду:
 - для СУБД **MySQL**:
 ```java
-./gradlew clean test -Durl=jdbc:mysql://localhost:3306/app -Duser=app -Dpassword=pass 
+./gradlew clean test -Durl=jdbc:mysql://localhost:3306/app
 ```
 - для СУБД **PostgreSQL**:
 ```java
-./gradlew clean test -Durl=jdbc:mysql://localhost:5432/app -Duser=app -Dpassword=pass  
+./gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app
 ```
 ---------
 

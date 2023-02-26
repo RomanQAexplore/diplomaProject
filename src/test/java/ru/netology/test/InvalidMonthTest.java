@@ -4,86 +4,89 @@ import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import ru.netology.pages.MainPage;
-import ru.netology.pages.PaymentPage;
+import ru.netology.pages.CreditPaymentPage;
+import ru.netology.pages.DebitPaymentPage;
 
 import static ru.netology.data.DataHelper.*;
 
 public class InvalidMonthTest extends TestBase {
-    MainPage mainPage = new MainPage();
-    PaymentPage paymentPage = new PaymentPage();
+
+
 
     @Nested
     class FieldMonthOfDebitCardTests {
+
 
         @BeforeEach
         void setUpAllDebitCardTests() {
             mainPage.payWithDebitCard();
         }
-
+        DebitPaymentPage DebitPaymentPage = new DebitPaymentPage();
         @Test
         void shouldNotDoPaymentWhenEmptyMonth() {
             val info = getEmptyMonth();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenMonthIsZeroZero() {
             val info = getInvalidFormatMonthIsZeroZero();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongTermMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfWrongTermMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenIrrelevantMonth() {
             val info = getInvalidFormatMonthIsIrrelevant();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongTermMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfWrongTermMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenMonthIs1Digit() {
             val info = getInvalidFormatMonthIsOneDigit();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfWrongFormatMessage();
         }
     }
 
     @Nested
     class FieldMonthOfCreditCardTests {
 
+
+
         @BeforeEach
         void setUpAllCreditCardTests() {
             mainPage.payWithCreditCard();
         }
-
+        CreditPaymentPage CreditPaymentPage = new CreditPaymentPage();
         @Test
         void shouldNotDoPaymentWhenEmptyMonth() {
             val info = getEmptyMonth();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfWrongFormatMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenMonthIsZeroZero() {
             val info = getInvalidFormatMonthIsZeroZero();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongTermMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfWrongTermMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenIrrelevantMonth() {
             val info = getInvalidFormatMonthIsIrrelevant();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongTermMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfWrongTermMessage();
         }
 
         @Test
         void shouldNotDoPaymentWhenMonthIs1Digit() {
             val info = getInvalidFormatMonthIsOneDigit();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfWrongFormatMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfWrongFormatMessage();
         }
     }
 }

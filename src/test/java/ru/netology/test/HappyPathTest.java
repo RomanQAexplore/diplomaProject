@@ -4,8 +4,8 @@ import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import ru.netology.pages.MainPage;
-import ru.netology.pages.PaymentPage;
+import ru.netology.pages.CreditPaymentPage;
+import ru.netology.pages.DebitPaymentPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -13,24 +13,27 @@ import static ru.netology.data.DataHelper.getValidApprovedCardData;
 import static ru.netology.data.DataHelper.getValidDeclinedCardData;
 import static ru.netology.data.SQLHelper.*;
 
+
 public class HappyPathTest extends TestBase {
 
-    MainPage mainPage = new MainPage();
-    PaymentPage paymentPage = new PaymentPage();
 
     @Nested
     class HappyPath1OfDebitCardTests {
+
+
+
 
         @BeforeEach
         void setUpAllDebitCardTests() {
             mainPage.payWithDebitCard();
         }
-
+        DebitPaymentPage DebitPaymentPage = new DebitPaymentPage();
         @Test
         void shouldDoPaymentWhenValidApprovedCard() {
+
             val info = getValidApprovedCardData();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfSuccessMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfSuccessMessage();
             val expectedStatus = "APPROVED";
             val actualStatus = getStatusForPaymentWithDebitCard();
             assertEquals(expectedStatus, actualStatus);
@@ -43,9 +46,10 @@ public class HappyPathTest extends TestBase {
 
         @Test
         void shouldNotDoPaymentWhenValidDeclinedCard() {
+
             val info = getValidDeclinedCardData();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfFailMessage();
+            DebitPaymentPage.fillForm(info);
+            DebitPaymentPage.waitIfFailMessage();
             val expectedStatus = "DECLINED";
             val actualStatus = getStatusForPaymentWithDebitCard();
             assertEquals(expectedStatus, actualStatus);
@@ -60,16 +64,20 @@ public class HappyPathTest extends TestBase {
     @Nested
     class HappyPath2OfCreditCardTests {
 
+
+
+
         @BeforeEach
         void setUpAllCreditCardTests() {
             mainPage.payWithCreditCard();
         }
-
+        CreditPaymentPage CreditPaymentPage = new CreditPaymentPage();
         @Test
         void shouldDoPaymentWhenValidApprovedCreditCard() {
+
             val info = getValidApprovedCardData();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfSuccessMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfSuccessMessage();
             val expectedStatus = "APPROVED";
             val actualStatus = getStatusForPaymentWithCreditCard();
             assertEquals(expectedStatus, actualStatus);
@@ -82,9 +90,10 @@ public class HappyPathTest extends TestBase {
 
         @Test
         void shouldNotDoPaymentWhenValidDeclinedCreditCard() {
+
             val info = getValidDeclinedCardData();
-            paymentPage.fillForm(info);
-            paymentPage.waitIfFailMessage();
+            CreditPaymentPage.fillForm(info);
+            CreditPaymentPage.waitIfFailMessage();
             val expectedStatus = "DECLINED";
             val actualStatus = getStatusForPaymentWithCreditCard();
             assertEquals(expectedStatus, actualStatus);
@@ -95,4 +104,6 @@ public class HappyPathTest extends TestBase {
             assertEquals(expectedId, actualId);
         }
     }
+
+
 }

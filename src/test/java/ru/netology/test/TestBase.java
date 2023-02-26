@@ -8,10 +8,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import ru.netology.data.SQLHelper;
+import ru.netology.pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
+    protected MainPage mainPage;
 
     @BeforeAll
     static void setUp() {
@@ -26,7 +28,7 @@ public class TestBase {
 
     @BeforeEach
     void setUpUrl() {
-        open(System.getProperty("sut.url"));
+      mainPage =  open(System.getProperty("sut.url"), MainPage.class);
     }
 
     @AfterEach

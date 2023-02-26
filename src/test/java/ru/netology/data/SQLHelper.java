@@ -12,9 +12,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SQLHelper {
-    private static final String url = System.getProperty("db.url");
-    private static final String user = System.getProperty("db.user");
-    private static final String password = System.getProperty("db.password");
+    private static final String url = System.getProperty("url");
+    private static final String user = System.getProperty("user");
+    private static final String password = System.getProperty("password");
     private static Connection conn;
 
     private static Connection getConnection() {
@@ -77,17 +77,6 @@ public class SQLHelper {
         return null;
     }
 
-    public static String getPaymentAmount() {
-        val extractAmount = "SELECT * FROM payment_entity";
-        val runner = new QueryRunner();
-        try (val conn = getConnection()) {
-            val transactionId = runner.query(conn, extractAmount, new BeanHandler<>(PaymentEntity.class));
-            return transactionId.getAmount();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     public static String getCreditId() {
         val extractBankId = "SELECT * FROM credit_request_entity";
